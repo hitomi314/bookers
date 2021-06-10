@@ -1,13 +1,13 @@
 class Book < ApplicationRecord
-  
+
   def index
     @books = Book.all
   end
-  
+
   def new
     @book = Book.new
   end
-  
+
   def create
     book = Book.new(book_params)
     book.save
@@ -16,5 +16,10 @@ class Book < ApplicationRecord
     else　render :new
     end
   end
-  
+
+   private
+  # ストロングパラメータ
+  def list_params
+    params.require(:book).permit(:title, :body)
+  end
 end
