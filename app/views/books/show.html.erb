@@ -1,5 +1,5 @@
 <% flash.each do |key, value| %>
-    <p class="alert alert-<%= key %>">
+    <p class="notice<%= key %>">
       <%= value %>
     </p>
 <% end %>
@@ -13,5 +13,5 @@
   <%= @book.body %>
 </p>
 <a class=edit><%= link_to 'Edit', edit_book_path(@book) %></a>
-| 
+|
 <a class="back"><%= link_to 'Back', "/books" %></a>
