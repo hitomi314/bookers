@@ -13,8 +13,13 @@ class BooksController < ApplicationController
 
   def update
     book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path(book)
+     if book.update(book_params)
+      flash[:succes] = 'Book was successfully updated.'
+      redirect_to book_path(book)
+     else
+      flash.now[:danger] = "登録に失敗しました"
+      render :new
+     end
   end
 
   def new
@@ -23,8 +28,13 @@ class BooksController < ApplicationController
 
   def create
     book = Book.new(book_params)
-    book.save
-    redirect_to book_path(book.id)
+    if book.save
+      flash[:succes] = 'Book was successfully created.'
+      redirect_to book_path(book.id)
+    else
+      flash.now[:danger] = "登録に失敗しました"
+      render :new
+    end
   end
 
   def destroy
