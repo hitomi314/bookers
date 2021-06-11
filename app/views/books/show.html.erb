@@ -6,4 +6,4 @@
   <span class="title">Body:</span>
   <span><%= @book.body %></span>
 </div>
-<div><%= link_to 'Edit', edit_book_path() %>|"Back"</div>
+<div><%= link_to 'Edit', edit_book_path(@book) %> | <%= link_to 'Back', "/books" %></div>
