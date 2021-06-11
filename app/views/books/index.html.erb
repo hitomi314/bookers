@@ -16,8 +16,8 @@
           <span class="book-title"><%= book.title %></span>
           <span class="book-body"><%= book.body %></span>
           <span>
-            <"Show">
-            <"Edit">
+            <%= link_to 'Show', book_path(book.id) %>
+            <%= link_to 'Edit', edit_book_path(book.id) %>
             <"Destroy">
             </span>
         </section>
