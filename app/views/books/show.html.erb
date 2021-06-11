@@ -4,12 +4,14 @@
     </p>
 <% end %>
 
-<div>
-  <span class="title">Title:</span>
-  <span><%= @book.title %></span>
-</div>
-<div>
-  <span class="title">Body:</span>
-  <span><%= @book.body %></span>
-</div>
-<div><%= link_to 'Edit', edit_book_path(@book) %> | <%= link_to 'Back', "/books" %></div>
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%= @book.body %>
+</p>
+<a class=edit><%= link_to 'Edit', edit_book_path(@book) %></a>
+| 
+<a class="back"><%= link_to 'Back', "/books" %></a>

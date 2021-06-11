@@ -32,8 +32,7 @@ class BooksController < ApplicationController
       flash[:succes] = 'Book was successfully created.'
       redirect_to book_path(book.id)
     else
-      flash.now[:danger] = "登録に失敗しました"
-      render :new
+      render "index"
     end
   end
 
