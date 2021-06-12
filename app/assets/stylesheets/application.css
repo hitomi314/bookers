@@ -119,17 +119,8 @@ div {
  display: block;
 }
 
-form {
- display: block;
- margin-top: 0em;
-}
-
-
 /*edit*/
 
-notice {
-color : green;
-}
 
 label {
  display: block;
